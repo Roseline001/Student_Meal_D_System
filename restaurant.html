@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Restaurant | SMeS</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="assets/logo.svg" alt="" width="40" height="40">
+            <span>SMeS</span>
+        </a>
+        <nav aria-label="Main">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="student.html">Students</a></li>
+                <li><a href="restaurant.html" aria-current="page">Restaurants</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="login-view" class="auth" aria-labelledby="login-title">
+            <h1 id="login-title">Partner restaurant sign in</h1>
+            <p class="lead">Enter the partner code you received when you registered.</p>
+            <form id="login-form" class="card form" novalidate>
+                <label for="partnerCode">Partner code</label>
+                <input id="partnerCode" name="partnerCode" type="text" placeholder="RES-501" autocomplete="off" required>
+                <small class="field-error" data-error-for="partnerCode"></small>
+                <button class="button" type="submit">Sign in</button>
+                <p class="hint">Demo: RES-501</p>
+            </form>
+        </section>
+
+        <section id="dashboard-view" hidden aria-labelledby="restaurant-name">
+            <div class="page-head">
+                <div>
+                    <p class="eyebrow">Partner restaurant</p>
+                    <h1 id="restaurant-name"></h1>
+                </div>
+                <button id="logout-button" class="button button--ghost" type="button">Sign out</button>
+            </div>
+
+            <div class="dashboard-grid">
+                <section class="card" aria-labelledby="check-title">
+                    <h2 id="check-title">Serve a meal</h2>
+                    <form id="check-form" class="form form--inline" novalidate>
+                        <label for="checkCode">Student ID</label>
+                        <div class="input-row">
+                            <input id="checkCode" name="studentCode" type="text" placeholder="STU-1001" autocomplete="off" required>
+                            <button class="button" type="submit">Check coupon</button>
+                        </div>
+                        <small class="field-error" data-error-for="studentCode"></small>
+                    </form>
+
+                    <div id="check-result" class="check-result" aria-live="polite" hidden></div>
+
+                    <form id="redeem-form" class="form" novalidate hidden>
+                        <label for="meal">Meal served</label>
+                        <input id="meal" name="meal" type="text" placeholder="e.g. Rice and beans" required>
+                        <small class="field-error" data-error-for="meal"></small>
+                        <button class="button button--accent" type="submit">Redeem meal</button>
+                    </form>
+                </section>
+
+                <section class="card" aria-labelledby="summary-title">
+                    <h2 id="summary-title">Reimbursement summary</h2>
+                    <dl class="stats stats--compact">
+                        <div class="stat"><dt>Meals served</dt><dd id="sum-count">0</dd></div>
+                        <div class="stat"><dt>Total value</dt><dd id="sum-total">0</dd></div>
+                        <div class="stat"><dt>Not yet claimed</dt><dd id="sum-unclaimed">0</dd></div>
+                    </dl>
+                </section>
+            </div>
+
+            <section class="section" aria-labelledby="served-title">
+                <h2 id="served-title">Meals served</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Student</th>
+                                <th scope="col">Meal</th>
+                                <th scope="col">Value</th>
+                                <th scope="col">Reimbursement</th>
+                            </tr>
+                        </thead>
+                        <tbody id="served-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div id="toast-region" class="toast-region" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <p>SMeS &copy; 2026</p>
+    </footer>
+</body>
+</html>
