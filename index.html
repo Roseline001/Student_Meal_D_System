@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Meal Coupons</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="" width="40" height="40">
+            <span>Student Meals Subsidy</span>
+        </a>
+        <nav aria-label="Main">
+            <ul class="nav-list">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="student.html">Students</a></li>
+                <li><a href="restaurant.html">Restaurants</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <section class="hero">
+            <div class="hero__text">
+                <p class="eyebrow">Student Meal Coupon System</p>
+                <h1>No learner should study on an empty stomach.</h1>
+                <p class="lead">
+                Student Meals Subsidy gives every verified public-school student a term meal coupon they can use
+                at partner restaurants near their school, from preschool all the way to university.
+                </p>
+                <div class="hero__actions">
+                    <a class="button" href="student.html">Check my coupon</a>
+                    <a class="button button--ghost" href="restaurant.html">I am a partner restaurant</a>
+                </div>
+            </div>
+
+            <aside class="ticket ticket--preview" aria-label="Example coupon">
+                <div class="ticket__main">
+                    <p class="ticket__label">Term meal coupon</p>
+                    <p class="ticket__value">150 <small>KES / meal</small></p>
+                    <p class="ticket__meta">60 meals · 1 per day</p>
+                </div>
+                <div class="ticket__stub">
+                    <p class="ticket__label">Valid until</p>
+                    <p class="ticket__date">4 Dec</p>
+                </div>
+            </aside>
+        </section>
+        <section class="section" aria-labelledby="how">
+            <h2 id="how-title">How it works</h2>
+            <ol class="steps">
+                <li class="card">
+                    <h3>1. Register</h3>
+                    <p>The admin registers schools, students and partner restaurants.</p>
+                </li>
+                <li class="card">
+                    <h3>2. Verify</h3>
+                    <p>Only students confirmed as currently enrolled in a public school receive a coupon.</p>
+                </li>
+                <li class="card">
+                    <h3>3. Eat</h3>
+                    <p>Students show their student ID at a nearby partner restaurant and get a meal.</p>
+                </li>
+                <li class="card">
+                    <h3>4. Reimburse</h3>
+                    <p>Restaurants track every meal served and claim it back from the government.</p>
+                </li>
+            </ol>
+        </section>
+        <section class="section" aria-labelledby="roles">
+            <h2 id="roles-title">Choose your space</h2>
+            <div class="role-grid">
+                <a class="role-card" href="student.html">
+                    <h3>Students</h3>
+                    <p>See your meals left, today's limit, nearby restaurants and meal history.</p>
+                </a>
+                <a class="role-card" href="restaurant.html">
+                    <h3>Partner restaurants</h3>
+                    <p>Check a student's coupon, serve a meal and view meals for reimbursement.</p>
+                </a>
+                <a class="role-card" href="admin.html">
+                    <h3>Administrators</h3>
+                    <p>Register schools, students and restaurants, verify enrollment and issue coupons.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Student Meals Subsidy &copy; 2026 · <a href="https://github.com/Roseline001/Student_Meal_D_System/tree/Dev">Source on GitHub</a></p>
+    </footer>
+</body>
+</html>
