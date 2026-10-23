@@ -240,6 +240,34 @@ img {
     margin-top: 3rem; 
 }
 
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.badge--ok { 
+    background: var(--green-soft); 
+    color: var(--green-dark); 
+}
+.badge--warn { 
+    background: var(--blue-soft); 
+    color: var(--blue); 
+}
+
+
 /* Home Page */
 .hero {
     display: grid;
@@ -377,5 +405,260 @@ img {
 .ticket--empty::before,
 .ticket--empty::after { 
     display: none; 
+}
+
+/* The Pages */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0;
+}
+
+.stat {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat dt { 
+    font-size: 0.85rem; 
+    color: var(--muted); 
+    font-weight: 700; 
+}
+.stat dd { 
+    margin: 0.25rem 0 0; 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    color: var(--green); 
+}
+
+.stats--compact { 
+    grid-template-columns: 1fr; 
+}
+.stats--compact .stat { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: left; 
+}
+.stats--compact dd { 
+    margin: 0; 
+    font-size: 1.25rem; 
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.restaurant-card { 
+    border-top: 0.4rem solid var(--yellow); 
+}
+
+.check-result {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border-left: 0.4rem solid;
+}
+
+.check-result--ok { 
+    background: var(--green-soft); 
+    border-color: var(--green); 
+}
+.check-result--fail { 
+    background: var(--blue-soft); 
+    border-color: var(--blue); 
+}
+.check-result__title { 
+    font-weight: 800; font-size: 1.1rem; 
+}
+
+
+.toast-region {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 20;
+    max-width: min(24rem, calc(100% - 2rem));
+}
+
+.toast {
+    margin: 0;
+    padding: 0.8rem 1.1rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    font-weight: 700;
+    background: var(--ink);
+    color: var(--white);
+    animation: slide-in 0.2s ease-out;
+}
+
+.toast--success { 
+    background: var(--green); 
+}
+.toast--error { 
+    background: var(--blue); 
+}
+
+/* Form */
+
+.auth { 
+    max-width: 28rem; 
+    margin: 2rem auto; 
+}
+
+.form { 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.form label,
+.form legend {
+    font-weight: 700;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.form input,
+.form select {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 2px solid var(--line);
+    border-radius: 0.6rem;
+    font: inherit;
+    background: var(--white);
+    color: var(--ink);
+}
+
+.form input:focus,
+.form select:focus { 
+    border-color: var(--green); 
+    outline: none; 
+}
+.form [aria-invalid="true"] { 
+    border-color: var(--blue); 
+}
+
+.form .button { 
+    margin-top: 1.25rem; 
+}
+
+.field-error { 
+    color: var(--blue); 
+    font-weight: 600; 
+    min-height: 1.2em; 
+}
+
+.field-pair { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 0.75rem; 
+}
+
+.input-row { 
+    display: flex; 
+    gap: 0.5rem; 
+}
+.input-row .button { 
+    margin-top: 0; 
+    white-space: nowrap; 
+}
+
+.form-actions { 
+    display: flex; 
+    gap: 0.5rem; 
+    flex-wrap: wrap; 
+}
+
+fieldset { 
+    border: 0; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.checkbox-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.25rem; 
+}
+.checkbox { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    font-weight: 600 !important; 
+    margin: 0 !important; 
+}
+.checkbox input { 
+    width: auto; 
+}
+ /* Tables */
+
+ .table-wrap {
+    overflow-x: auto;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-top: 1rem;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+}
+
+th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    background: var(--yellow-soft);
+}
+
+tbody tr:last-child td { 
+    border-bottom: 0; 
+}
+
+td:first-child { 
+    white-space: nowrap; 
+}
+
+td.empty,
+li.empty { 
+    text-align: center; 
+    color: var(--muted); 
+    padding: 2rem 1rem; 
+}
+
+/* Buttons inside a table cell (a cell stays display: table-cell so borders line up) */
+.actions > * { 
+    margin: 0.15rem 0.3rem 0.15rem 0; 
+    vertical-align: middle; 
 }
 
