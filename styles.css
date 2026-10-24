@@ -662,3 +662,34 @@ li.empty {
     vertical-align: middle; 
 }
 
+/* Admin */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--line);
+}
+
+.tab {
+  padding: 0.6rem 1.1rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tab[aria-selected="true"] { color: var(--green); border-bottom-color: var(--green); }
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 1fr) 2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.panel-grid .table-wrap { margin-top: 0; }
