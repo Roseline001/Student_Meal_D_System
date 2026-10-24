@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | SMeS</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="" width="40" height="40">
+            <span>SMeS</span>
+        </a>
+        <nav aria-label="Main">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="student.html">Students</a></li>
+                <li><a href="restaurant.html">Restaurants</a></li>
+                <li><a href="admin.html"  aria-current="page">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="page-head">
+            <div>
+                <p class="eyebrow">Administration</p>
+                <h1>Manage SMeS</h1>
+            </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Admin sections">
+            <button class="tab" role="tab" id="tab-students" aria-controls="panel-students" aria-selected="true" type="button">Students</button>
+            <button class="tab" role="tab" id="tab-schools" aria-controls="panel-schools" aria-selected="false" type="button">Schools</button>
+            <button class="tab" role="tab" id="tab-restaurants" aria-controls="panel-restaurants" aria-selected="false" type="button">Restaurants</button>
+            <button class="tab" role="tab" id="tab-coupons" aria-controls="panel-coupons" aria-selected="false" type="button">Coupons</button>
+        </div>
+
+        <!-- Students -->
+        <section id="panel-students" class="panel" role="tabpanel" aria-labelledby="tab-students">
+            <div class="panel-grid">
+                <form id="student-form" class="card form" novalidate>
+                    <h2 id="student-form-title">Register a student</h2>
+                    <input type="hidden" name="id">
+
+                    <label for="s-code">Student ID</label>
+                    <input id="s-code" name="studentCode" type="text" placeholder="STU-1004" required>
+                    <small class="field-error" data-error-for="studentCode"></small>
+
+                    <div class="field-pair">
+                        <div>
+                            <label for="s-first">First name</label>
+                            <input id="s-first" name="firstName" type="text" required>
+                            <small class="field-error" data-error-for="firstName"></small>
+                        </div>
+                        <div>
+                            <label for="s-last">Last name</label>
+                            <input id="s-last" name="lastName" type="text" required>
+                            <small class="field-error" data-error-for="lastName"></small>
+                        </div>
+                    </div>
+
+                    <label for="s-dob">Date of birth</label>
+                    <input id="s-dob" name="dateOfBirth" type="date" required>
+                    <small class="field-error" data-error-for="dateOfBirth"></small>
+
+                    <label for="s-school">School</label>
+                    <select id="s-school" name="schoolId" class="school-select" required></select>
+                    <small class="field-error" data-error-for="schoolId"></small>
+
+                    <label for="s-grade">Grade / year</label>
+                    <input id="s-grade" name="grade" type="text" placeholder="Grade 6" required>
+                    <small class="field-error" data-error-for="grade"></small>
+
+                    <div class="form-actions">
+                        <button class="button" type="submit">Save student</button>
+                        <button id="cancel-edit" class="button button--ghost" type="button" hidden>Cancel edit</button>
+                    </div>
+                </form>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">School</th>
+                                <th scope="col">Enrollment</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="students-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schools -->
+        <section id="panel-schools" class="panel" role="tabpanel" aria-labelledby="tab-schools" hidden>
+            <div class="panel-grid">
+                <form id="school-form" class="card form" novalidate>
+                    <h2>Register a school</h2>
+                    <label for="sc-name">School name</label>
+                    <input id="sc-name" name="name" type="text" required>
+                    <small class="field-error" data-error-for="name"></small>
+
+                    <label for="sc-level">Level</label>
+                    <select id="sc-level" name="level" required>
+                        <option value="">Choose a level</option>
+                        <option value="preschool">Preschool</option>
+                        <option value="primary">Primary</option>
+                        <option value="secondary">Secondary</option>
+                        <option value="university">University</option>
+                    </select>
+                    <small class="field-error" data-error-for="level"></small>
+
+                    <label for="sc-city">City</label>
+                    <input id="sc-city" name="city" type="text" required>
+                    <small class="field-error" data-error-for="city"></small>
+
+                    <label for="sc-address">Address</label>
+                    <input id="sc-address" name="address" type="text">
+
+                    <button class="button" type="submit">Save school</button>
+                </form>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Level</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schools-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurants -->
+        <section id="panel-restaurants" class="panel" role="tabpanel" aria-labelledby="tab-restaurants" hidden>
+            <div class="panel-grid">
+                <form id="restaurant-form" class="card form" novalidate>
+                    <h2>Register a partner restaurant</h2>
+                    <label for="r-code">Partner code</label>
+                    <input id="r-code" name="partnerCode" type="text" placeholder="RES-504" required>
+                    <small class="field-error" data-error-for="partnerCode"></small>
+
+                    <label for="r-name">Restaurant name</label>
+                    <input id="r-name" name="name" type="text" required>
+                    <small class="field-error" data-error-for="name"></small>
+
+                    <label for="r-address">Address</label>
+                    <input id="r-address" name="address" type="text" required>
+                    <small class="field-error" data-error-for="address"></small>
+
+                    <div class="field-pair">
+                        <div>
+                            <label for="r-phone">Phone</label>
+                            <input id="r-phone" name="phone" type="tel">
+                        </div>
+                        <div>
+                            <label for="r-hours">Opening hours</label>
+                            <input id="r-hours" name="openingHours" type="text" placeholder="07:00 - 16:00">
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Nearby schools</legend>
+                        <div id="r-schools" class="checkbox-list"></div>
+                    </fieldset>
+                    <small class="field-error" data-error-for="schoolIds"></small>
+
+                    <button class="button" type="submit">Save restaurant</button>
+                </form>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="restaurants-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coupons -->
+        <section id="panel-coupons" class="panel" role="tabpanel" aria-labelledby="tab-coupons" hidden>
+            <div class="panel-grid">
+                <form id="coupon-form" class="card form" novalidate>
+                    <h2>Issue term coupons</h2>
+                    <p class="muted">Every verified student without an active coupon receives one.</p>
+
+                    <label for="c-term">Term</label>
+                    <input id="c-term" name="term" type="text" placeholder="2027 Term 1" required>
+                    <small class="field-error" data-error-for="term"></small>
+
+                    <div class="field-pair">
+                        <div>
+                            <label for="c-value">Value per meal</label>
+                            <input id="c-value" name="valuePerMeal" type="number" min="1" step="1" required>
+                            <small class="field-error" data-error-for="valuePerMeal"></small>
+                        </div>
+                        <div>
+                            <label for="c-meals">Meals in term</label>
+                            <input id="c-meals" name="mealsTotal" type="number" min="1" step="1" required>
+                            <small class="field-error" data-error-for="mealsTotal"></small>
+                        </div>
+                    </div>
+
+                    <div class="field-pair">
+                        <div>
+                            <label for="c-limit">Meals per day</label>
+                            <input id="c-limit" name="dailyLimit" type="number" min="1" step="1" required>
+                            <small class="field-error" data-error-for="dailyLimit"></small>
+                        </div>
+                        <div>
+                            <label for="c-expires">Expiry date</label>
+                            <input id="c-expires" name="expiresAt" type="date" required>
+                            <small class="field-error" data-error-for="expiresAt"></small>
+                        </div>
+                    </div>
+
+                    <button class="button" type="submit">Issue coupons</button>
+                </form>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Student</th>
+                                <th scope="col">Term</th>
+                                <th scope="col">Meals used</th>
+                                <th scope="col">Expires</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coupons-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-region" class="toast-region" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <p>SMeS &copy; 2026 </p>
+    </footer>
+</body>
+</html>
