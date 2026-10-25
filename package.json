@@ -1,7 +1,7 @@
 {
-  "name": "fairplate",
+  "name": "SMeS",
   "version": "1.0.0",
-  "description": "FairPlate: a student meal coupon system (frontend + tests)",
+  "description": "SMeS: a student meal coupon system (frontend + tests)",
   "private": true,
   "scripts": {
     "test": "jest",
