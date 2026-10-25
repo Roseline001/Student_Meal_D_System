@@ -1,5 +1,5 @@
 import * as api from "../js/api.js";
-import { init, selectTab } from "../js/pages/admin.js";
+import { init, selectTab } from "../js/admin.js";
 import { loadPage, flush, submit, fill } from "./helpers.js";
 
 jest.mock("../js/api.js");

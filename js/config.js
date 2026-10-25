@@ -1,7 +1,7 @@
 // App-wide settings. Change these in one place instead of across files.
 
 // After deploying the API to Render, paste its URL here (no trailing slash).
-export const DEPLOYED_API_URL = "https://SMeS-api.onrender.com";
+export const DEPLOYED_API_URL = "https://smes-api.onrender.com";
 export const LOCAL_API_URL = "http://localhost:3000";
 
 const isLocal = ["localhost", "127.0.0.1"].includes(globalThis.location?.hostname);

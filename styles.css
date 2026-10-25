@@ -23,7 +23,7 @@
 *,
 *::before,
 *::after {
-    -sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -78,6 +78,28 @@ img {
 
 [hidden] { 
     display: none !important; 
+}
+
+/* Keyboard users can jump straight to the main content */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0.5rem;
+    background: var(--green);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+
+.skip-link:focus { 
+    left: 0.5rem; 
+}
+
+/* Visible focus ring for keyboard users */
+:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
 }
 
 .site-header {
@@ -212,8 +234,8 @@ img {
 }
 
 .lead { 
-    font-size: 1.1rem; color: 
-    var(--muted); 
+    font-size: 1.1rem; 
+    color: var(--muted); 
     max-width: 40rem; 
 }
 .muted { 
@@ -519,6 +541,17 @@ img {
     background: var(--blue); 
 }
 
+@keyframes slide-in {
+    from { 
+        transform: translateY(0.5rem); 
+        opacity: 0; 
+    }
+    to { 
+        transform: none; 
+        opacity: 1; 
+    }
+}
+
 /* Form */
 
 .auth { 
@@ -610,9 +643,9 @@ fieldset {
 .checkbox input { 
     width: auto; 
 }
- /* Tables */
+/* Tables */
 
- .table-wrap {
+.table-wrap {
     overflow-x: auto;
     background: var(--white);
     border: 1px solid var(--line);
@@ -693,3 +726,68 @@ li.empty {
 }
 
 .panel-grid .table-wrap { margin-top: 0; }
+
+/* Tablet */
+@media (max-width: 60rem) {
+    .hero,
+    .dashboard-grid,
+    .panel-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    .steps { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .role-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* Mobile */
+@media (max-width: 36rem) {
+    main { 
+        padding: 1.25rem 1rem 3rem; 
+    }
+
+    .site-header,
+    .nav-list { 
+        justify-content: center; 
+    }
+
+    .steps,
+    .field-pair { 
+        grid-template-columns: 1fr; 
+    }
+
+    .stats { 
+        gap: 0.5rem; 
+    }
+    .stat { 
+        padding: 0.75rem 0.5rem; 
+    }
+    .stat dd { 
+        font-size: 1.3rem; 
+    }
+
+    .input-row { 
+        flex-direction: column; 
+    }
+
+    .ticket { 
+        grid-template-columns: 1fr; 
+    }
+    .ticket::before,
+    .ticket::after { 
+        display: none; 
+    }
+    .ticket__stub { 
+        width: auto; 
+        border-left: 0; 
+        border-top: 3px dashed var(--bg); 
+    }
+
+    th, 
+    td { 
+        padding: 0.6rem; 
+    }
+}

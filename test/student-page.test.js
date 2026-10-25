@@ -1,5 +1,5 @@
 import * as api from "../js/api.js";
-import { init, renderCoupon } from "../js/pages/student.js";
+import { init, renderCoupon } from "../js/student.js";
 import { loadPage, flush, submit, fill } from "./helpers.js";
 
 // Replace every API function with a Jest mock so no real server is needed.

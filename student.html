@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="js/student.js"></script>
 </head>
-<body>
+<body data-page="student">
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
         <a class="brand" href="index.html">
             <img src="logo.svg" alt="" width="40" height="40">
@@ -46,7 +48,7 @@
             </form>
         </section>
 
-        <!-- Shown after sign in; filled in by js/pages/student.js -->
+        <!-- Shown after sign in; filled in by js/student.js -->
         <section id="dashboard-view" hidden aria-labelledby="student-name">
             <div class="page-head">
                 <div>

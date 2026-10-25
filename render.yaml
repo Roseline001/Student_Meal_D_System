@@ -1,8 +1,8 @@
-# Render Blueprint for the FairPlate API (JSON Server).
+# Render Blueprint for the SMeS API (JSON Server).
 # In Render: New > Blueprint > pick this repository.
 services:
   - type: web
-    name: SMeS-api
+    name: smes-api
     runtime: node
     plan: free
     rootDir: server
