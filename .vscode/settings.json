@@ -1,0 +1,8 @@
+{
+  "liveServer.settings.ignoreFiles": [
+    "server/**",
+    "test/**",
+    "coverage/**",
+    "node_modules/**"
+  ]
+}

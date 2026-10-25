@@ -23,7 +23,7 @@ export async function request(path, { method = "GET", body } = {}) {
   try {
     response = await fetch(`${API_BASE_URL}${path}`, options);
   } catch {
-    throw new ApiError("Cannot reach the server. Check your connection and try again.");
+    throw new ApiError("Cannot reach the server. Make sure the API is running (cd server, then npm start) and try again.");
   }
 
   if (!response.ok) {
