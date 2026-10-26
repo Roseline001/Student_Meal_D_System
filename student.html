@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student | SMeS</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="js/student.js"></script>
+</head>
+<body data-page="student">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="" width="40" height="40">
+            <span>SMeS</span>
+        </a>
+        <nav aria-label="Main">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="student.html" aria-current="page">Students</a></li>
+                <li><a href="restaurant.html">Restaurants</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- Shown until the student signs in -->
+        <section id="login-view" class="auth" aria-labelledby="login-title">
+            <h1 id="login-title">Student sign in</h1>
+            <p class="lead">Use the student ID printed on your school card.</p>
+            <form id="login-form" class="card form" novalidate>
+                <label for="studentCode">Student ID</label>
+                <input id="studentCode" name="studentCode" type="text" placeholder="STU-1001" autocomplete="off" required>
+                <small class="field-error" data-error-for="studentCode"></small>
+
+                <label for="dateOfBirth">Date of birth</label>
+                <input id="dateOfBirth" name="dateOfBirth" type="date" required>
+                <small class="field-error" data-error-for="dateOfBirth"></small>
+
+                <button class="button" type="submit">Sign in</button>
+                <p class="hint">Demo: STU-1001 with date of birth 14/03/2012</p>
+            </form>
+        </section>
+
+        <!-- Shown after sign in; filled in by js/student.js -->
+        <section id="dashboard-view" hidden aria-labelledby="student-name">
+            <div class="page-head">
+                <div>
+                    <p class="eyebrow" id="student-school"></p>
+                    <h1 id="student-name"></h1>
+                    <p id="student-status"></p>
+                </div>
+                <button id="logout-button" class="button button--ghost" type="button">Sign out</button>
+            </div>
+
+            <div class="dashboard-grid">
+                <article id="coupon-ticket" class="ticket" aria-live="polite"></article>
+
+                <dl class="stats" aria-label="Coupon summary">
+                    <div class="stat">
+                        <dt>Meals left</dt>
+                        <dd id="stat-left">-</dd>
+                    </div>
+                    <div class="stat">
+                        <dt>Used today</dt>
+                        <dd id="stat-today">-</dd>
+                    </div>
+                    <div class="stat">
+                        <dt>Days to expiry</dt>
+                        <dd id="stat-days">-</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <section class="section" aria-labelledby="nearby-title">
+                <h2 id="nearby-title">Partner restaurants near your school</h2>
+                <ul id="restaurant-list" class="restaurant-grid"></ul>
+            </section>
+
+            <section class="section" aria-labelledby="history-title">
+                <h2 id="history-title">My meal history</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Restaurant</th>
+                                <th scope="col">Meal</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div id="toast-region" class="toast-region" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <p>SMeS &copy; 2026</p>
+    </footer>
+</body>
+</html>

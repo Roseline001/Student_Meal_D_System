@@ -1,0 +1,153 @@
+{
+  "schools": [
+    {
+      "id": 1,
+      "name": "Riverside Primary School",
+      "level": "primary",
+      "city": "Nairobi",
+      "address": "12 River Road"
+    },
+    {
+      "id": 2,
+      "name": "Hilltop Secondary School",
+      "level": "secondary",
+      "city": "Nairobi",
+      "address": "4 Hill Avenue"
+    },
+    {
+      "id": 3,
+      "name": "City Technical University",
+      "level": "university",
+      "city": "Nairobi",
+      "address": "1 Campus Way"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "studentCode": "STU-1001",
+      "firstName": "Amina",
+      "lastName": "Otieno",
+      "dateOfBirth": "2012-03-14",
+      "schoolId": 1,
+      "grade": "Grade 6",
+      "enrolled": true,
+      "verifiedAt": "2026-09-01T08:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "studentCode": "STU-1002",
+      "firstName": "Brian",
+      "lastName": "Mwangi",
+      "dateOfBirth": "2009-07-22",
+      "schoolId": 2,
+      "grade": "Form 2",
+      "enrolled": true,
+      "verifiedAt": "2026-09-01T08:05:00.000Z"
+    },
+    {
+      "id": 3,
+      "studentCode": "STU-1003",
+      "firstName": "Cynthia",
+      "lastName": "Wanjiru",
+      "dateOfBirth": "2004-11-02",
+      "schoolId": 3,
+      "grade": "Year 2",
+      "enrolled": false,
+      "verifiedAt": null
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "partnerCode": "RES-501",
+      "name": "Mama Oliech Kitchen",
+      "address": "20 River Road",
+      "city": "Nairobi",
+      "phone": "+254 700 000 001",
+      "openingHours": "07:00 - 16:00",
+      "schoolIds": [1, 2],
+      "active": true
+    },
+    {
+      "id": 2,
+      "partnerCode": "RES-502",
+      "name": "Green Bowl Cafe",
+      "address": "9 Campus Way",
+      "city": "Nairobi",
+      "phone": "+254 700 000 002",
+      "openingHours": "08:00 - 18:00",
+      "schoolIds": [3],
+      "active": true
+    },
+    {
+      "id": 3,
+      "partnerCode": "RES-503",
+      "name": "Hill View Canteen",
+      "address": "6 Hill Avenue",
+      "city": "Nairobi",
+      "phone": "+254 700 000 003",
+      "openingHours": "06:30 - 15:00",
+      "schoolIds": [2],
+      "active": true
+    }
+  ],
+  "coupons": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "term": "2026 Term 3",
+      "valuePerMeal": 150,
+      "mealsTotal": 60,
+      "mealsUsed": 2,
+      "dailyLimit": 1,
+      "issuedAt": "2026-09-01",
+      "expiresAt": "2026-12-04",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "studentId": 2,
+      "term": "2026 Term 3",
+      "valuePerMeal": 150,
+      "mealsTotal": 60,
+      "mealsUsed": 1,
+      "dailyLimit": 1,
+      "issuedAt": "2026-09-01",
+      "expiresAt": "2026-12-04",
+      "status": "active"
+    }
+  ],
+  "redemptions": [
+    {
+      "id": 1,
+      "couponId": 1,
+      "studentId": 1,
+      "restaurantId": 1,
+      "amount": 150,
+      "meal": "Rice and beans",
+      "redeemedAt": "2026-10-20T12:15:00.000Z",
+      "claimed": false
+    },
+    {
+      "id": 2,
+      "couponId": 1,
+      "studentId": 1,
+      "restaurantId": 1,
+      "amount": 150,
+      "meal": "Ugali and sukuma wiki",
+      "redeemedAt": "2026-10-21T12:30:00.000Z",
+      "claimed": false
+    },
+    {
+      "id": 3,
+      "couponId": 2,
+      "studentId": 2,
+      "restaurantId": 3,
+      "amount": 150,
+      "meal": "Chapati and lentils",
+      "redeemedAt": "2026-10-21T13:00:00.000Z",
+      "claimed": true
+    }
+  ]
+}

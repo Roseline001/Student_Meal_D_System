@@ -1,0 +1,16 @@
+{
+  "name": "smes-api",
+  "version": "1.0.0",
+  "description": "JSON Server REST API for the SMeS student meal coupon system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "0.17.4"
+  }
+}
